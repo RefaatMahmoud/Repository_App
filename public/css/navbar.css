@@ -1,0 +1,25 @@
+/* start Main Navbar */
+.bg-light{
+    background-color: darkslategrey!important;
+    color: #FFF;;
+}
+.navbar-dark .navbar-nav .nav-link
+{
+    color: #FFF;
+    font-size: 20px;
+}
+.solgan-img{
+    height: 50px;
+}
+
+.slogan-text{
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 25px;
+    color: #FFF;
+}
+.navbar-left
+{
+    background-color: #FFF;
+}
+/* end main Navbar */

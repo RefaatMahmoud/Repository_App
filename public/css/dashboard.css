@@ -1,0 +1,44 @@
+*{
+    font-family: sans-serif;
+}
+.main-card{
+    height: 488px;
+
+}
+.title{
+    float: right;
+    font-size: 24px;
+}
+.content{
+    display: flex;
+    float: right;
+}
+
+.category-item{
+    float: right;
+}
+.category-item . fa
+{
+    font-size: 20px;
+}
+.category-item span {
+    font-size: 20px;
+}
+.sidebar .card-header a
+{
+    color: #000;
+}
+.sidebar .card-header:hover
+{
+    background-color: darkslategrey;
+    color: #FFF;
+}
+.sidebar .card-header:hover a
+{
+    color: #FFF;
+}
+.sidebar .card-header a:hover{
+    cursor: pointer;
+    text-underline: none;
+    color: #FFF;
+}

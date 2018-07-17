@@ -1,0 +1,21 @@
+.login{
+    font-family: sans-serif;
+    background-color: darkslategrey;
+    height: 100vh;
+}
+.loginContent .card-header, .card-body
+{
+    background-color: #FFF;
+}
+.loginContent .form-group , .loginContent label , .loginContent .form-control
+{
+    background-color: #FFF;
+}
+.card-header,.card-body
+{
+    text-align: right;
+}
+.loginContent
+{
+    margin-top: 30%;
+}
