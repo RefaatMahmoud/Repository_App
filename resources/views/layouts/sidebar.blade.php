@@ -4,7 +4,7 @@
             <div class="category ">
                 <div class="category-item ">
                     <h4 class="category-header ">
-                        <span><a href="">الأعضاء</a></span> <i class="fa fa-users fa-lg"></i>
+                        <span><a href="/members">الأعضاء</a></span> <i class="fa fa-users fa-lg"></i>
                     </h4>
                 </div>
             </div>

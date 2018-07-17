@@ -16,7 +16,10 @@ Route::get('/', function () {
 });
 //Users
 Route::get('/login' , 'loginController@index');
+Route::post('/login' , 'loginController@index');
 Route::get('/register' , 'RegisterController@index');
 Route::post('/register' , 'RegisterController@index');
+Route::get('/logout' , 'LoginController@logoutFunc');
 //Dashboard
 Route::get('/dashboard' , 'DashboardController@index');
+Route::get('members' , 'DashboardController@showMembers');

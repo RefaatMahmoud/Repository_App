@@ -25,25 +25,15 @@
                         تسجيل دخول المسؤولين عن المخزن
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST">
                             {{ csrf_field() }}
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                            <div class="form-group">
                                 <label>البريد الإلكترونى</label>
-                                <input type="email" class="form-control" name="email" placeholder="من فضلك أدخل البريد الإلكترونى" value="{{ old('email') }}" required>
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                                <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
-                                @endif
+                                <input type="email" class="form-control" name="email" placeholder="من فضلك أدخل البريد الإلكترونى" required>
                             </div>
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <div class="form-group">
                                 <label>كلمة المرور</label>
                                 <input id="password" type="password" class="form-control" placeholder="من فضلك ادخل كلمة المرور" name="password" required>
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-info">
