@@ -17,5 +17,6 @@ Route::get('/', function () {
 //Users
 Route::get('/login' , 'loginController@index');
 Route::get('/register' , 'RegisterController@index');
+Route::post('/register' , 'RegisterController@index');
 //Dashboard
 Route::get('/dashboard' , 'DashboardController@index');

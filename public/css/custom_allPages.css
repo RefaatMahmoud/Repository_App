@@ -1,0 +1,12 @@
+*{
+    font-family: sans-serif;
+    text-align: right;
+}
+.add-new-user .breadcrumb
+{
+    float: right;
+    font-size: 20px;
+    margin-bottom: 0px;
+    background-color: rgba(0,0,0,.0);
+    padding: 0px;
+}

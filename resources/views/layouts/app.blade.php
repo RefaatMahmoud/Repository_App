@@ -11,7 +11,9 @@
     <title>تطبيق المخزن</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/custom_allPages.css')}}">
     <link rel="stylesheet" href="{{asset('css/navbar.css')}}">
+    <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
 </head>
 <body>
     <div id="app">
