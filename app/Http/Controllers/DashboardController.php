@@ -12,4 +12,7 @@ class DashboardController extends Controller
     public function showMembers(){
         return view('users.members');
     }
+    public function aboutUs(){
+        return view('aboutUs');
+    }
 }

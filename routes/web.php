@@ -23,3 +23,4 @@ Route::get('/logout' , 'LoginController@logoutFunc');
 //Dashboard
 Route::get('/dashboard' , 'DashboardController@index');
 Route::get('members' , 'DashboardController@showMembers');
+Route::get('/aboutUs' , 'DashboardController@aboutUs');

@@ -39,6 +39,11 @@
     text-underline: none;
     color: #FFF;
 }
+/* start in Main Dashboard*/
+.counter-block h5 , .counter-block h1
+{
+    text-align: center;
+}
 /* start usertable */
 .users-table{
     text-align: center;

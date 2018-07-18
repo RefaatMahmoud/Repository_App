@@ -71,7 +71,7 @@
             <div class="category ">
                 <div class="category-item ">
                     <h4 class="category-header ">
-                        <span><a href="">تواصل معانا</a></span> <i class="fa fa-life-buoy fa-lg"></i>
+                        <span><a href="/aboutUs">تواصل معانا</a></span> <i class="fa fa-life-buoy fa-lg"></i>
                     </h4>
                 </div>
             </div>

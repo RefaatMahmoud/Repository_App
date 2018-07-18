@@ -16,7 +16,7 @@
                         <div class="content">
                             <div class="col-md-4  ml-auto">
                                 <div class="card text-center bg-secondary text-white mb-5">
-                                    <div class="card-body">
+                                    <div class="counter-block card-body">
                                         <h5>عدد الأدمن</h5>
                                         <h1 class="display-5">
                                             <i class="fa fa-users"></i> 6
@@ -26,7 +26,7 @@
                             </div>
                             <div class="col-md-4 ml-auto">
                                 <div class="card text-center bg-secondary text-white mb-5 ">
-                                    <div class="card-body">
+                                    <div class="counter-block card-body">
                                         <h5>الأصناف</h5>
                                         <h1 class="display-5">
                                             <i class="fa fa-cubes"></i> 6
@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-md-4 ml-auto">
                                 <div class="card text-center bg-secondary text-white mb-5 ">
-                                    <div class="card-body">
+                                    <div class="counter-block card-body">
                                         <h5>الفواتير</h5>
                                         <h1 class="display-5">
                                             <i class="fa fa-credit-card"></i> 6
