@@ -28,7 +28,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>اسم العضو</label>
-                                                <input type="text" class="form-control" placeholder="ادخل الاسم" name="name" required>
+                                                <input type="text" class="form-control" placeholder="ادخل الاسم" name="name" required رش>
                                             </div>
                                         </div>
                                         <div class="form-row">

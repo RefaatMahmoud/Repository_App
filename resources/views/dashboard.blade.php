@@ -8,6 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
+                    @include('flashMessages.messages')
                     <div class="card main-card">
                         <div class="card-header">
                             <h4 class="title">لوحة التحكم</h4>

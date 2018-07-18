@@ -30,7 +30,7 @@ class RegisterController extends Controller
             $user->save();
             //Auth::login($user);
             //redirect
-            return redirect('/dashboard');
+            return redirect('/dashboard')->with('success' , 'تم تسجيل العضو بنجاح');
         }
         else
         {

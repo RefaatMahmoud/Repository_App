@@ -21,13 +21,13 @@
                                         <legend class="mb-4">بيانات الصنف الجديد</legend>
                                         <div class="form-group row">
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="" name="name">
+                                                <input type="text" class="form-control" placeholder="" name="name" required value="{{old('name')}}">
                                             </div>
                                             <label class="col-sm-2 col-form-label">اسم الصنف</label>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="" name="quantity">
+                                                <input type="text" class="form-control" placeholder="" name="quantity" required value="{{old('quantity')}}">
                                             </div>
                                             <label class="col-sm-2 col-form-label">الكمية</label>
                                         </div>
@@ -42,13 +42,17 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control"placeholder="" name="price">
+                                                <input type="text" class="form-control"placeholder="" name="price" required value="{{old('price')}}">
                                             </div>
                                             <label class="col-sm-2 col-form-label">سعر الواحدة</label>
                                         </div>
                                         <button type="submit" class="btn  btn-info "> إضافة صنف جديد <i class="fa fa-plus"></i></button>
                                     </fieldset>
                                 </form>
+                                <br>
+                                @foreach($errors->all() as $error)
+                                    <div class="alert alert-danger">{{$error}}</div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
