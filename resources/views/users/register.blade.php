@@ -9,7 +9,6 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item active">إضافة عضو جديد</li>
                                 <li class="breadcrumb-item"><a href="#">لوحة التحكم</a></li>
-
                             </ol>
                         </div>
                         <br>
@@ -42,7 +41,7 @@
                                                 <input type="text" class="form-control" placeholder="ادخل البريد الإلكتروني" name="email" required>
                                             </div>
                                         </div>
-                                        <button type="submit" class="addBtn btn btn-info">إضافة العضو</button>
+                                        <button type="submit" class="addBtn btn btn-info">إضافة عضو جديد <i class="fa fa-plus"></i></button>
                                     </fieldset>
                                 </form>
                                 <br>

@@ -41,7 +41,6 @@
                                         <h1 class="display-5">
                                             <i class="fa fa-credit-card"></i> 6
                                         </h1>
-
                                     </div>
                                 </div>
                             </div>

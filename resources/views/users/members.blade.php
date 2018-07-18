@@ -16,7 +16,7 @@
                         <div class="content">
                             <div class="col  ml-auto">
                                 <table class="table table-striped users-table">
-                                    <thead class="thead-inverse">
+                                    <thead class="thead-dark">
                                     <tr>
                                         <th>صلاحية العضو</th>
                                         <th>اسم العضو</th>
@@ -35,7 +35,6 @@
                                     @endforeach
                                     </tbody>
                                 </table>
-                                <button class="btn btn-info">إضافة عضو جديد</button>
                             </div>
                         </div>
                     </div>

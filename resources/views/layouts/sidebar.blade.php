@@ -27,7 +27,7 @@
             <div class="category ">
                 <div class="category-item ">
                     <h4 class="category-header ">
-                        <span><a href="">الأصناف</a></span> <i class="fa fa-cubes fa-lg"></i>
+                        <span><a href="{{url('/categories')}}">الأصناف</a></span> <i class="fa fa-cubes fa-lg"></i>
                     </h4>
                 </div>
             </div>
@@ -49,7 +49,7 @@
             <div class="category ">
                 <div class="category-item ">
                     <h4 class="category-header ">
-                        <span><a href="">إضافة صنف جديد</a></span> <i class="fa fa-plus-circle fa-lg"></i>
+                        <span><a href="{{url('/add_category')}}">إضافة صنف جديد</a></span> <i class="fa fa-plus-circle fa-lg"></i>
                     </h4>
                 </div>
             </div>

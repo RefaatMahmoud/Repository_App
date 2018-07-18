@@ -22,5 +22,9 @@ Route::post('/register' , 'RegisterController@index');
 Route::get('/logout' , 'LoginController@logoutFunc');
 //Dashboard
 Route::get('/dashboard' , 'DashboardController@index');
-Route::get('members' , 'DashboardController@showMembers');
+Route::get('members' , 'DashboardController@members');
 Route::get('/aboutUs' , 'DashboardController@aboutUs');
+//categories
+Route::get('/categories' , 'CategoriesController@Categories');
+Route::post('/categories' , 'CategoriesController@Categories');
+Route::get('/add_category' , 'CategoriesController@addCat');
