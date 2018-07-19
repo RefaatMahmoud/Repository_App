@@ -28,3 +28,5 @@ Route::get('/aboutUs' , 'DashboardController@aboutUs');
 Route::get('/categories' , 'CategoriesController@Categories');
 Route::post('/categories' , 'CategoriesController@Categories');
 Route::get('/add_category' , 'CategoriesController@addCat');
+Route::post('/updatePrice/{id}' , 'CategoriesController@updatePrice');
+Route::post('/addQuantity/{id}' , 'CategoriesController@addQuantity');

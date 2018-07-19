@@ -30,10 +30,46 @@ class CategoriesController extends Controller
             return redirect('/dashboard')->with('success','تم إضافة الصنف بنجاح');
         }
         else{
-            return view('The_store.Categories');
+            return view('Categories.Categories');
         }
     }
+
     public function addCat(){
-        return view('The_store.addCat');
+        return view('Categories.addCat');
+    }
+
+    public function updatePrice(Request $request , $id){
+        $catObj = Categories::find($id);
+        //Validation
+        $this->validate($request , [
+            'price' => 'regex:/^\d*(\.\d{1})?$/'
+        ],[
+            'price.regex' => 'لابد ان يكون السعر رقم إما ان يكون صحيح او عشرى مثال 10.5'
+        ]);
+        //Modify Price
+        $catObj->price = $request->price;
+        $catObj->save();
+        //Redirect
+        return redirect('/dashboard')->with('success','تم تعديل السعر بنجاح');
+    }
+
+    public function addQuantity(Request $request , $id){
+        $catObj = Categories::find($id);
+        //Validation
+        $this->validate($request , [
+            'quantity' => 'regex:/^\d*(\.\d{1})?$/'
+        ],[
+            'quantity.regex' => 'لابد ان تكون الكمية رقم إما ان يكون صحيح او عشرى مثال 10.5'
+        ]);
+        //Get old and request quantity
+        $oldQuantity = $catObj->quantity;
+        $requestQuantity = $request->quantity;
+        //New Quantity
+        $newQuantity = $oldQuantity + $requestQuantity;
+        //Save
+        $catObj->quantity = $newQuantity;
+        $catObj->save();
+        //Redirect
+        return redirect('/dashboard')->with('success','تم تعديل الكمية بنجاح');
     }
 }

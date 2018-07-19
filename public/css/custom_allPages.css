@@ -2,6 +2,10 @@
     font-family: sans-serif;
     text-align: right;
 }
+.modal-header h5
+{
+    margin-left: 65%;
+}
 .add-new-user .breadcrumb
 {
     float: right;
