@@ -33,3 +33,4 @@ Route::post('/addQuantity/{id}' , 'CategoriesController@addQuantity');
 //Bills
 Route::get('/addBill' , 'BillsController@addBill');
 Route::post('/addBill' , 'BillsController@addBill');
+Route::get('finishBill' , 'BillsController@finishBill');

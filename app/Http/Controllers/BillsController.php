@@ -16,4 +16,7 @@ class BillsController extends Controller
             return view('Bills.addBill');
         }
     }
+    public function finishBill(){
+        return view('Bills.finishBill');
+    }
 }
