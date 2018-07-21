@@ -30,3 +30,6 @@ Route::post('/categories' , 'CategoriesController@Categories');
 Route::get('/add_category' , 'CategoriesController@addCat');
 Route::post('/updatePrice/{id}' , 'CategoriesController@updatePrice');
 Route::post('/addQuantity/{id}' , 'CategoriesController@addQuantity');
+//Bills
+Route::get('/addBill' , 'BillsController@addBill');
+Route::post('/addBill' , 'BillsController@addBill');

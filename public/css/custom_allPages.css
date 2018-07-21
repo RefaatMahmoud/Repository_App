@@ -14,3 +14,11 @@
     background-color: rgba(0,0,0,.0);
     padding: 0px;
 }
+.btn:not(:disabled):not(.disabled)
+{
+    color: #FFF;;
+}
+.btn:not(:disabled):not(.disabled):hover
+{
+    color: #FFF;
+}

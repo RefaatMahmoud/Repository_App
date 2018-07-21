@@ -9,7 +9,6 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item active">إضافة صنف جديد</li>
                                 <li class="breadcrumb-item"><a href="#">لوحة التحكم</a></li>
-
                             </ol>
                         </div>
                         <br>

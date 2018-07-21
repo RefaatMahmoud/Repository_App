@@ -38,7 +38,7 @@
             <div class="category ">
                 <div class="category-item ">
                     <h4 class="category-header ">
-                        <span><a href="">الفواتير</a></span> <i class="fa fa-credit-card fa-lg"></i>
+                        <span><a href="#">الفواتير</a></span> <i class="fa fa-credit-card fa-lg"></i>
                     </h4>
                 </div>
             </div>
@@ -60,7 +60,7 @@
             <div class="category ">
                 <div class="category-item ">
                     <h4 class="category-header ">
-                        <span><a href="">عمل فاتورة جديدة</a></span> <i class="fa fa-plus-circle fa-lg"></i>
+                        <span><a href="/addBill">عمل فاتورة جديدة</a></span> <i class="fa fa-plus-circle fa-lg"></i>
                     </h4>
                 </div>
             </div>
