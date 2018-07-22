@@ -3,11 +3,12 @@
     <div class="dash-boby mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 add-new-user">
+                <div class="col-md-12 add-new-user">
                     <div class="card main-card">
                         <div class="card-header">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item active">عمل فاتوره جديده</li>
+                                <li class="breadcrumb-item active"> الخطوة الاولى</li>
+                                <li class="breadcrumb-item"><a href="#">عمل فاتوره جديده</a></li>
                                 <li class="breadcrumb-item"><a href="#">لوحة التحكم</a></li>
                             </ol>
                         </div>
@@ -17,10 +18,10 @@
                                 <form id="form" class="inputUserData" method="post" action="/addBill">
                                     {{csrf_field()}}
                                     <fieldset>
-                                        <legend class="mb-4">بيانات الفاتوره </legend>
+                                        <legend class="mb-4">إدخال بيانات العميل </legend>
                                         <div class="form-group row">
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="" name="name"  value="{{old('name')}}">
+                                                <input type="text" class="form-control" placeholder="" name="clientName"  value="{{old('name')}}">
                                             </div>
                                             <label class="col-sm-2 col-form-label">اسم العميل</label>
                                         </div>
@@ -32,33 +33,12 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-10">
-                                                <input type="date" class="form-control" placeholder="" name="date"  value="{{old('quantity')}}">
+                                                <input type="text" class="form-control" placeholder="" name="date"  value="{{old('quantity')}}">
                                             </div>
                                             <label class="col-sm-2 col-form-label">التاريخ</label>
                                         </div>
-                                        <div class="form-group row">
-                                            <div class="col-sm-2">
-                                                <input type="text" class="form-control"placeholder="" name="quantity">
-                                            </div>
-                                            <label class="col-sm-2 col-form-label">الكمية المطلوبة</label>
-                                            <div class="col-sm-3">
-                                                <select name="type" id="" class="form-control">
-                                                    <option value="0">كيلو</option>
-                                                    <option value="1">سيخ</option>
-                                                </select>
-                                            </div>
-                                            <label class="col-sm-1 col-form-label">النوع</label>
-                                            <div class="col-sm-3">
-                                                <select name="category" id="" class="form-control">
-                                                    <option value="0">حديد</option>
-                                                    <option value="1">ذهب</option>
-                                                </select>
-                                            </div>
-                                            <label class="col-sm-1 col-form-label">صنف</label>
-                                        </div>
                                     </fieldset>
-                                    <a class="btn  btn-info addItems"> إضافة عناصر جديده <i class="fa fa-plus"></i></a>
-                                    <button type="submit" class="btn  btn-info "> إضافة صنف جديد <i class="fa fa-plus"></i></button>
+                                    <button type="submit" class="btn  btn-info "> الخطوة الثانية <i class="fa fa-step-backward"></i></button>
                                 </form>
                                 <br>
                                 @foreach($errors->all() as $error)
@@ -68,7 +48,6 @@
                         </div>
                     </div>
                 </div>
-                @include('layouts.sidebar')
             </div>
         </div>
     </div>

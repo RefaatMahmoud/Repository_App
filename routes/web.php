@@ -31,6 +31,9 @@ Route::get('/add_category' , 'CategoriesController@addCat');
 Route::post('/updatePrice/{id}' , 'CategoriesController@updatePrice');
 Route::post('/addQuantity/{id}' , 'CategoriesController@addQuantity');
 //Bills
-Route::get('/addBill' , 'BillsController@addBill');
-Route::post('/addBill' , 'BillsController@addBill');
+Route::get('/addBill' , 'BillsController@addClientInfo');
+Route::post('/addBill' , 'BillsController@addClientInfo');
+Route::get('/add_Bill_step2' , 'BillsController@add_Bill_step2');
+Route::post('/add_Bill_step2' , 'BillsController@add_Bill_step2');
+Route::get('/add_Bill_step3' , 'BillsController@add_Bill_step2');
 Route::get('finishBill' , 'BillsController@finishBill');

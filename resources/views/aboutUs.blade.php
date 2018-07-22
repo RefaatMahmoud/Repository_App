@@ -3,7 +3,7 @@
     <div class="dash-boby mt-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 add-new-user">
+                <div class="col-md-12 add-new-user">
                     <div class="card main-card">
                         <div class="card-header">
                             <ol class="breadcrumb">
@@ -26,7 +26,6 @@
                         </div>
                     </div>
                 </div>
-                @include('layouts.sidebar')
             </div>
         </div>
     </div>

@@ -22,4 +22,8 @@
 {
     background-color: #FFF;
 }
+a:hover {
+    color: #FFF;
+    text-decoration: none;
+}
 /* end main Navbar */

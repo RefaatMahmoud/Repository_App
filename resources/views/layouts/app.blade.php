@@ -24,8 +24,6 @@
             <div class="container">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-
-
                         @if(Auth::check())
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -36,10 +34,36 @@
                             </div>
                         </li>
                         @endif
-
-
                     </ul>
-                    <span class="slogan-text">لوحة التحكم</span>
+                    <a href="/aboutUs" class="slogan-text">تواصل معانا</a>
+                    <ul class="navbar-nav mr-3">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">الفواتير</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/#">سجل الفواتير</a>
+                                <a class="dropdown-item" href="/addBill">إضافة فاتوره جديده</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-3">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">الأصناف</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/categories">سجل الأصناف</a>
+                                <a class="dropdown-item" href="/add_category">إضافة صنف جديد</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav mr-3">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">الأعضاء</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/members">سجل الأعضاء</a>
+                                <a class="dropdown-item" href="/register">إضافة عضو جديد</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="/dashboard" class="slogan-text">لوحة التحكم</a>
                     <img class="img-fluid rounded-circle solgan-img" src="images/563679_169046943289082_1944952273_n.jpg" alt="">
                 </div>
             </div>
