@@ -30,35 +30,35 @@
                                         <thead>
                                         <tr>
                                             <th>الإجمالي</th>
-                                            <th>كمية</th>
+                                            <th>الكمية المطلوبة</th>
                                             <th>السعر</th>
                                             <th>إسم الصنف</th>
                                             <th>كود الصنف</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                            <?php
-                                            //Bill Info for current customer
-                                            $billInfo = DB::table('bills')->where('clientId','=' , $clientId)->get();
-                                            //get category info for current single bill info
-                                            foreach ($billInfo as $singleInfo)
-                                                {
-                                                    $catId = $singleInfo->categoryId;
-                                                    $catInfo = DB::table('categories')->where('id','=' , $catId)->get();;
-                                                   foreach ($catInfo as $singlecatInfo)
-                                                       {?>
-                                                        <tr>
-                                                            <td>{{$requestedQuantity * $singlecatInfo->price}}</td>
-                                                            <td>{{$requestedQuantity}}</td>
-                                                            <td>{{$singlecatInfo->price}}</td>
-                                                            <td>{{$singlecatInfo->name}}</td>
-                                                            <td>{{$singlecatInfo->id}}</td>
-                                                        </tr>
-                                            <?php
+                                        <?php
+                                        //Bill Informations for current customer
+                                        $billsInfo = DB::table('bills')->where('clientId','=' , $clientId)->get();
+                                        //get category info for current single bill info
+                                        foreach ($billsInfo as $billInfo)
+                                        {
+                                        $catId = $billInfo->categoryId;
+                                        $catsInfo = DB::table('categories')->where('id','=' , $catId)->get();;
+                                        foreach ($catsInfo as $catInfo)
+                                        {?>
+                                        <tr>
+                                            <td>{{$totalPrice}}</td>
+                                            <td>{{$requestedQuantity}}</td>
+                                            <td>{{$catInfo->price}}</td>
+                                            <td>{{$catInfo->name}}</td>
+                                            <td>{{$catInfo->id}}</td>
+                                        </tr>
+                                        <?php
 
-                                                       }
-                                                }
-                                            ?>
+                                        }
+                                        }
+                                        ?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -69,7 +69,7 @@
                                         <div class="form-group row">
                                             <input type="hidden" value="{{$clientId}}" name="clientId">
                                             <div class="col-sm-4">
-                                                <input type="text" class="form-control"placeholder="" name="quantity">
+                                                <input type="text" class="form-control"placeholder="" name="requestedQuantity">
                                             </div>
                                             <label class="col-sm-2 col-form-label">الكمية المطلوبة</label>
                                             <div class="col-sm-5">
@@ -86,7 +86,7 @@
                                         </div>
                                     </fieldset>
                                     <button type="submit" class="btn  btn-info "> إضافة الصنف الى الفاتوره <i class="fa fa-plus"></i></button>
-                                    <a class="btn btn-primary" href="">إنهاء الفاتوره</a>
+                                    <a class="btn btn-primary" href="/finsihBill">إنهاء الفاتوره</a>
                                 </form>
                                 <br>
                                 @foreach($errors->all() as $error)

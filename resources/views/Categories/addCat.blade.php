@@ -33,8 +33,8 @@
                                         <div class="form-group row">
                                             <div class="col-sm-10">
                                                 <select name="type" class="form-control">
-                                                    <option value="0">كيلو</option>
-                                                    <option value="1">سيخ</option>
+                                                    <option value="كيلو">كيلو</option>
+                                                    <option value="سيخ">سيخ</option>
                                                 </select>
                                             </div>
                                             <label class="col-sm-2 col-form-label">اختار النوع</label>

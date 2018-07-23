@@ -15,7 +15,7 @@
                         <br>
                         <div class="content">
                             <div class="col  ml-auto">
-                                <form id="form" class="inputUserData" method="post" action="/addBill">
+                                <form id="form" class="inputUserData" method="post" action="/add_Bill_step1">
                                     {{csrf_field()}}
                                     <fieldset>
                                         <legend class="mb-4">إدخال بيانات العميل </legend>

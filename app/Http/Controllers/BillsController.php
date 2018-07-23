@@ -3,12 +3,33 @@
 namespace App\Http\Controllers;
 
 use App\Bills;
+use App\Categories;
 use App\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use DB;
 
 class BillsController extends Controller
 {
-    public function addClientInfo(Request $request){
+    public function index(){
+        $clientsInfo = Client::all();
+        return view('Bills.Bills')->with('clientsInfo' ,$clientsInfo );
+    }
+
+    public function BillDetatils($id){
+        $clientId = DB::table('bills')->where('clientId','=',$id)->value('clientId');
+        //Get Client Info
+        $clientInfo = DB::table('clients')->where('id','=',$id)->get();
+        //Get category Info
+        $catsInfo = DB::table('bills')->where('clientId' , '=' , $clientId)->get();
+        return view('Bills.BillDetails')->with([
+            "clientId" => $clientId,
+            "clientInfo" => $clientInfo,
+            "catsInfo" => $catsInfo
+        ]);
+    }
+
+    public function add_Bill_step1(Request $request){
         if($request->isMethod('post'))
         {
             //create object
@@ -39,33 +60,53 @@ class BillsController extends Controller
         }
         else
         {
-            return view('Bills.addBill');
+            return view('Bills.add_Bill_step1');
         }
     }
-    public function finishBill(){
-        return view('Bills.finishBill');
-    }
+
     public function add_Bill_step2(Request $request){
        if($request->isMethod('post'))
        {
-           //create object
+           //Create object
            $bill_Info = new Bills();
-           //requests
+           //Requests
            $bill_Info->clientId =$request->clientId;
-           $bill_Info->quantity = $request->quantity;
+           $bill_Info->requestedQuantity = $request->requestedQuantity;
            $bill_Info->categoryId = $request->categoryId;
-           //save
+           //Total price
+           $catPrice = DB::table('categories')->where('id','=',$bill_Info->categoryId)->value('price');
+           $bill_Info->total = $catPrice * $request->requestedQuantity;
+           //Reduce from stock
+           $cat = Categories::find($request->categoryId);
+           $cat->quantity = $cat->quantity - $request->requestedQuantity;
+           //Save
+           $cat->save();
            $bill_Info->save();
-           //redirect
+           //Redirect
            return view('Bills.add_Bill_step3')->with([
                'clientId' => $bill_Info->clientId,
                'categoryId' => $bill_Info->categoryId,
-               'requestedQuantity' => $request->quantity
+               'requestedQuantity' => $request->requestedQuantity,
+               'totalPrice' => $bill_Info->total
            ]);
        }
        else
        {
 
        }
+    }
+
+    public function finishBill(){
+        //get Last Client Id from Bills
+        $clientId = DB::table('bills')->orderby('clientId','Desc')->take(1)->value('clientId');
+        //Get Client Info
+        $clientInfo = DB::table('clients')->where('id','=',$clientId)->get();
+        //Get category Info
+        $catsInfo = DB::table('bills')->where('clientId' , '=' , $clientId)->get();
+        return view('Bills.finishBill')->with([
+            "clientId" => $clientId,
+            "clientInfo" => $clientInfo,
+            "catsInfo" => $catsInfo
+        ]);
     }
 }

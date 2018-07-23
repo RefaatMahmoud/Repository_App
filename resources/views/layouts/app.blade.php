@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>تطبيق المخزن</title>
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
@@ -40,8 +38,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">الفواتير</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/#">سجل الفواتير</a>
-                                <a class="dropdown-item" href="/addBill">إضافة فاتوره جديده</a>
+                                <a class="dropdown-item" href="/Bills">سجل الفواتير</a>
+                                <a class="dropdown-item" href="/add_Bill_step1">إضافة فاتوره جديده</a>
                             </div>
                         </li>
                     </ul>

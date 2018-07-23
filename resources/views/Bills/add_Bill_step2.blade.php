@@ -29,7 +29,7 @@
                                         <div class="form-group row">
                                             <input type="hidden" value="{{$clientId}}" name="clientId">
                                             <div class="col-sm-4">
-                                                 <input type="text" class="form-control"placeholder="" name="quantity">
+                                                 <input type="text" class="form-control"placeholder="" name="requestedQuantity">
                                             </div>
                                             <label class="col-sm-2 col-form-label">الكمية المطلوبة</label>
                                             <div class="col-sm-5">
@@ -37,8 +37,8 @@
                                                 <?php
                                                 $catsInfo = DB::table('categories')->get();
                                                 ?>
-                                                    @foreach($catsInfo as $cat)
-                                                        <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                                    @foreach($catsInfo as $info)
+                                                        <option value="{{$info->id}}">{{$info->name}}</option>
                                                     @endforeach
                                             </select>
                                             </div>

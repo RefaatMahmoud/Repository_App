@@ -29,39 +29,55 @@
                         <div class="col  ml-auto">
                             <div class="printBillHeader">
                                 <div class="firstRow">
-                                    <h5 class="pb-3">/ اسم العميل </h5>
-                                    <h5 class="pb-3">/ العنوان </h5>
-                                    <h5 class="pb-3">/ تاريخ الفاتوره </h5>
-                                    <h5 class="pb-3">/ السعر الإجمالى </h5>
+                                    <?php
+                                    $clientInfos = DB::table('clients')->where('id','=',$clientId)->get();
+                                    ?>
+                                    @foreach($clientInfos as $clientInfo)
+                                        <h5 class="pb-3">اسم العميل / {{$clientInfo->clientName}}</h5>
+                                        <h5 class="pb-3"> العنوان / {{$clientInfo->address}}</h5>
+                                        <h5 class="pb-3"> تاريخ الفاتوره / {{$clientInfo->date}}</h5>
+                                    @endforeach
                                 </div>
                             </div>
                             <table class="table table-striped users-table">
                                 <thead class="thead-inverse">
                                 <tr>
-                                    <th>السعر الإجمالي</th>
-                                    <th>سعر الوحدة</th>
-                                    <th>نوع الوحدة</th>
-                                    <th>عدد الوحدة</th>
+                                    <th>الإجمالي</th>
+                                    <th>الكمية المطلوبة</th>
+                                    <th>السعر</th>
                                     <th>إسم الصنف</th>
+                                    <th>كود الصنف</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php
+                                $totalPriceItems = 0;
+                                //Bill Informations for current customer
+                                $billsInfo = DB::table('bills')->where('clientId','=' , $clientId)->get();
+                                //get category info for current single bill info
+                                foreach ($billsInfo as $billInfo)
+                                {
+                                $catId = $billInfo->categoryId;
+                                $requestedQuantity = $billInfo->requestedQuantity;
+                                $totalPriceItem = $billInfo->total;
+                                $totalPriceItems += $totalPriceItem;
+                                $catsInfo = DB::table('categories')->where('id','=' , $catId)->get();;
+                                foreach ($catsInfo as $catInfo)
+                                {?>
                                 <tr>
-                                    <td>30</td>
-                                    <td>3</td>
-                                    <td>سيخ</td>
-                                    <td>10</td>
-                                    <td>ماسورة</td>
+                                    <td>{{$totalPriceItem}}</td>
+                                    <td>{{$requestedQuantity}}</td>
+                                    <td>{{$catInfo->price}}</td>
+                                    <td>{{$catInfo->name}}</td>
+                                    <td>{{$catInfo->id}}</td>
                                 </tr>
-                                <tr>
-                                    <td>30</td>
-                                    <td>3</td>
-                                    <td>سيخ</td>
-                                    <td>10</td>
-                                    <td>ماسورة</td>
-                                </tr>
+                                <?php
+                                }
+                                }
+                                ?>
                                 </tbody>
                             </table>
+                            <h5 class="alert alert-success pb-3"> السعر الإجمالى = {{$totalPriceItems}} </h5>
                         </div>
                     </div>
                 </div>
@@ -69,10 +85,11 @@
         </div>
         <br>
         <a href="/dashboard">الرجوع الى لوحة التحكم</a>
-        <button class="btn btn-info">طباعة الفاتورة</button>
+        <a id="printBill" href="/finsihBill" class="btn btn-info">طباعة الفاتورة</a>
     </div>
 </div>
 <!-- Scripts -->
+<script src="{{asset('js/printBill.js')}}"></script>
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/popper.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
