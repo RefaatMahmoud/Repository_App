@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 use DB;
 class CategoriesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('protectRoutes');
+    }
+
     public function Categories(Request $request){
         if($request->isMethod('post')) {
             $catObj = new Categories();
@@ -72,4 +77,5 @@ class CategoriesController extends Controller
         //Redirect
         return redirect('/dashboard')->with('success','تم تعديل الكمية بنجاح');
     }
+
 }

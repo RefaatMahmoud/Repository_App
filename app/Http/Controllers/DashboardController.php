@@ -6,12 +6,19 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('protectRoutes');
+    }
+
     public function index(){
         return view('dashboard');
     }
+
     public function members(){
         return view('users.members');
     }
+
     public function aboutUs(){
         return view('aboutUs');
     }

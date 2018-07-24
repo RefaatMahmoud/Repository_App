@@ -22,8 +22,8 @@
                                             <div class="form-group col-md-6">
                                                 <label>صلاحية العضو</label>
                                                 <select class="form-control" name="role" required>
-                                                    <option>مشرف</option>
-                                                    <option>ادمن</option>
+                                                    <option value="مشرف">مشرف</option>
+                                                    <option value="ادمن">ادمن</option>
                                                 </select>
                                             </div>
                                             <div class="form-group col-md-6">

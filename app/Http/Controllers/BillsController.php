@@ -11,7 +11,11 @@ use DB;
 
 class BillsController extends Controller
 {
-    
+    public function __construct()
+    {
+        $this->middleware('protectRoutes');
+    }
+
     public function index(){
         $clientsInfo = Client::all();
         return view('Bills.Bills')->with('clientsInfo' ,$clientsInfo );

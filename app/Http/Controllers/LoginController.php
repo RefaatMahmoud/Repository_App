@@ -24,6 +24,7 @@ class LoginController extends Controller
             return view('users.login');
         }
     }
+
     public function logoutFunc(){
         Auth::logout();
         return redirect('/login');

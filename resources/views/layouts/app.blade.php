@@ -52,6 +52,7 @@
                             </div>
                         </li>
                     </ul>
+                    @if(Auth::user()->role == "ادمن")
                     <ul class="navbar-nav mr-3">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">الأعضاء</a>
@@ -61,6 +62,7 @@
                             </div>
                         </li>
                     </ul>
+                    @endif
                     <a href="/dashboard" class="slogan-text">لوحة التحكم</a>
                     <img class="img-fluid rounded-circle solgan-img" src="images/563679_169046943289082_1944952273_n.jpg" alt="">
                 </div>
