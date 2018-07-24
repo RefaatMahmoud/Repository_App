@@ -40,13 +40,13 @@ class BillsController extends Controller
             $clientObj->date = $request->date;
             //validation
             $this->validate($request , [
-                "clientName" => "string",
-                "address" => "string",
-                "date" => "string",
+                "clientName" => 'regex:/^[a-zA-Z ]+$/',
+                "address" => 'regex:/^[a-zA-Z ]+$/',
+                "date" => 'regex:/^[a-zA-Z ]+$/',
             ],[
-                "clientName.string" => "لابد ان يكون اسم العميل بالحروف",
-                "address.string" => "لابد ان يكون اسم العنوان بالحروف",
-                "date.string" => "لابد ان يكون اسم التاريخ بالحروف"
+                "clientName.regex" => "لابد ان يكون اسم العميل بالحروف",
+                "address.regex" => "لابد ان يكون اسم العنوان بالحروف",
+                "date.regex" => "لابد ان يكون اسم التاريخ بالحروف"
             ]);
             //save
             $clientObj->save();
@@ -73,6 +73,12 @@ class BillsController extends Controller
            $bill_Info->clientId =$request->clientId;
            $bill_Info->requestedQuantity = $request->requestedQuantity;
            $bill_Info->categoryId = $request->categoryId;
+           //validation
+           $this->validate($request , [
+               'requestedQuantity' => 'regex:/^\d*(\.\d{2})?$/'
+           ],[
+               'requestedQuantity.regex' => 'لابد ان تكون الكمية المطلوبة بالارقام اما ان يكون صحيح مثال 20 او عشرى مثال 20.25'
+           ]);
            //Total price
            $catPrice = DB::table('categories')->where('id','=',$bill_Info->categoryId)->value('price');
            $bill_Info->total = $catPrice * $request->requestedQuantity;
@@ -89,10 +95,6 @@ class BillsController extends Controller
                'requestedQuantity' => $request->requestedQuantity,
                'totalPrice' => $bill_Info->total
            ]);
-       }
-       else
-       {
-
        }
     }
 

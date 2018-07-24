@@ -28,7 +28,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>اسم العضو</label>
-                                                <input type="text" class="form-control" placeholder="ادخل الاسم" name="name" required رش>
+                                                <input type="text" class="form-control" placeholder="ادخل الاسم" name="name" required value="{{old('name')}}">
                                             </div>
                                         </div>
                                         <div class="form-row">
@@ -38,7 +38,7 @@
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label>البريد الإلكتروني</label>
-                                                <input type="text" class="form-control" placeholder="ادخل البريد الإلكتروني" name="email" required>
+                                                <input type="text" class="form-control" placeholder="ادخل البريد الإلكتروني" name="email" required value="{{old('email')}}">
                                             </div>
                                         </div>
                                         <button type="submit" class="addBtn btn btn-info">إضافة عضو جديد <i class="fa fa-plus"></i></button>
