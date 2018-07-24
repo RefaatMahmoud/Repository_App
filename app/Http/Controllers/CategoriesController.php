@@ -12,18 +12,17 @@ class CategoriesController extends Controller
             //Validate
             $this->validate($request , [
                 'name' => 'unique:Categories',
-                'price' => 'regex:/^\d*(\.\d{1})?$/',
+                'price' => 'regex:/^\d*(\.\d{2})?$/',
                 'quantity' => 'regex:/^\d*(\.\d{1})?$/'
             ],[
                 'name.unique' => 'هذا الصنف موجود بالفعل فى المخزن',
-                'price.regex' => 'لابد ان يكون السعر رقم إما ان يكون صحيح او عشرى مثال 10.5',
-                'quantity.regex' => 'لابد ان تكون الكمية السعر رقم إما ان يكون صحيح او عشرى مثال 10.5'
+                'price.regex' => 'لابد ان يكون السعر رقم إما ان يكون صحيح او عشرى مثال 10.50',
+                'quantity.regex' => 'لابد ان تكون الكمية رقم إما ان يكون صحيح او عشرى مثال 10.50'
             ]);
             //Requests
             $catObj->name = $request->name;
             $catObj->quantity = $request->quantity;
             $catObj->price = $request->price;
-            $catObj->type = $request->type;
             //Save
             $catObj->save();
             //Redirect
@@ -42,9 +41,9 @@ class CategoriesController extends Controller
         $catObj = Categories::find($id);
         //Validation
         $this->validate($request , [
-            'price' => 'regex:/^\d*(\.\d{1})?$/'
+            'price' => 'regex:/^\d*(\.\d{2})?$/'
         ],[
-            'price.regex' => 'لابد ان يكون السعر رقم إما ان يكون صحيح او عشرى مثال 10.5'
+            'price.regex' => 'لابد ان يكون السعر رقم إما ان يكون صحيح او عشرى مثال 10.50'
         ]);
         //Modify Price
         $catObj->price = $request->price;
@@ -57,9 +56,9 @@ class CategoriesController extends Controller
         $catObj = Categories::find($id);
         //Validation
         $this->validate($request , [
-            'quantity' => 'regex:/^\d*(\.\d{1})?$/'
+            'quantity' => 'regex:/^\d*(\.\d{2})?$/'
         ],[
-            'quantity.regex' => 'لابد ان تكون الكمية رقم إما ان يكون صحيح او عشرى مثال 10.5'
+            'quantity.regex' => 'لابد ان تكون الكمية رقم إما ان يكون صحيح او عشرى مثال 10.50'
         ]);
         //Get old and request quantity
         $oldQuantity = $catObj->quantity;
