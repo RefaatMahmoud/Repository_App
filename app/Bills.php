@@ -10,11 +10,11 @@ class Bills extends Model
         'clientId' , 'categoryId' , 'requestedQuantity' , 'total'
     ];
 
-    public function Clients(){
+    public function Client(){
         return $this->belongsTo(Client::class);
     }
 
     public function Categories(){
-        return $this->belongsTo(Categories::class);
+        return $this->hasMany(Categories::class);
     }
 }

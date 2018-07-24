@@ -10,7 +10,7 @@ class Client extends Model
         'clientName' , 'address' , 'date'
     ];
 
-    public function Bills(){
-        return $this->hasMany(Bills::class);
+    public function Bill(){
+        return $this->belongsTo(Bills::class);
     }
 }
