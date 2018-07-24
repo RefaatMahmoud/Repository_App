@@ -30,6 +30,7 @@
                                         <thead>
                                         <tr>
                                             <th>الإجمالي</th>
+                                            <th>الكمية الموجودة حاليأ فى المخزن</th>
                                             <th>الكمية المطلوبة</th>
                                             <th>السعر</th>
                                             <th>إسم الصنف</th>
@@ -48,14 +49,14 @@
                                         foreach ($catsInfo as $catInfo)
                                         {?>
                                         <tr>
-                                            <td>{{$totalPrice}}</td>
-                                            <td>{{$requestedQuantity}}</td>
+                                            <td>{{$billInfo->total}}</td>
+                                            <td>{{$catInfo->quantity}}</td>
+                                            <td>{{$billInfo->requestedQuantity}}</td>
                                             <td>{{$catInfo->price}}</td>
                                             <td>{{$catInfo->name}}</td>
                                             <td>{{$catInfo->id}}</td>
                                         </tr>
                                         <?php
-
                                         }
                                         }
                                         ?>
@@ -69,7 +70,7 @@
                                         <div class="form-group row">
                                             <input type="hidden" value="{{$clientId}}" name="clientId">
                                             <div class="col-sm-4">
-                                                <input type="text" class="form-control"placeholder="" name="requestedQuantity">
+                                                <input type="text" class="form-control"placeholder="" name="requestedQuantity" required>
                                             </div>
                                             <label class="col-sm-2 col-form-label">الكمية المطلوبة</label>
                                             <div class="col-sm-5">

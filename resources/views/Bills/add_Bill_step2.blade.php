@@ -4,7 +4,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 add-new-user">
-                    @include('flashMessages.messages')
+                    @foreach($errors->all() as $error)
+                        <div class="alert alert-danger">{{$error}}</div>
+                    @endforeach
                     <div class="card main-card">
                         <div class="card-header">
                             <ol class="breadcrumb">
@@ -29,7 +31,7 @@
                                         <div class="form-group row">
                                             <input type="hidden" value="{{$clientId}}" name="clientId">
                                             <div class="col-sm-4">
-                                                 <input type="text" class="form-control"placeholder="" name="requestedQuantity">
+                                                 <input type="text" class="form-control"placeholder="" name="requestedQuantity" required>
                                             </div>
                                             <label class="col-sm-2 col-form-label">الكمية المطلوبة</label>
                                             <div class="col-sm-5">
@@ -48,9 +50,6 @@
                                     <button type="submit" class="btn  btn-info "> الخطوة الثالثة <i class="fa fa-step-backward"></i></button>
                                 </form>
                                 <br>
-                                @foreach($errors->all() as $error)
-                                    <div class="alert alert-danger">{{$error}}</div>
-                                @endforeach
                             </div>
                         </div>
                     </div>

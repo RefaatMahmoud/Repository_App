@@ -13,8 +13,9 @@ class CategoriesController extends Controller
             $this->validate($request , [
                 'name' => 'unique:Categories',
                 'price' => 'regex:/^\d*(\.\d{2})?$/',
-                'quantity' => 'regex:/^\d*(\.\d{1})?$/'
+                'quantity' => 'regex:/^\d*(\.\d{2})?$/'
             ],[
+                'name.regex' => 'لابد ان يكون اسم الصنف بالحروف',
                 'name.unique' => 'هذا الصنف موجود بالفعل فى المخزن',
                 'price.regex' => 'لابد ان يكون السعر رقم إما ان يكون صحيح او عشرى مثال 10.50',
                 'quantity.regex' => 'لابد ان تكون الكمية رقم إما ان يكون صحيح او عشرى مثال 10.50'

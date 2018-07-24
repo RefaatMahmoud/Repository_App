@@ -21,19 +21,19 @@
                                         <legend class="mb-4">إدخال بيانات العميل </legend>
                                         <div class="form-group row">
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="" name="clientName"  value="{{old('name')}}">
+                                                <input type="text" class="form-control" placeholder="" name="clientName"  value="{{old('clientName')}}" required>
                                             </div>
                                             <label class="col-sm-2 col-form-label">اسم العميل</label>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="" name="address"  value="{{old('quantity')}}">
+                                                <input type="text" class="form-control" placeholder="" name="address"  value="{{old('address')}}" required>
                                             </div>
                                             <label class="col-sm-2 col-form-label">العنوان</label>
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-sm-10">
-                                                <input type="text" class="form-control" placeholder="" name="date"  value="{{old('quantity')}}">
+                                                <input type="text" class="form-control" placeholder="" name="date"  value="{{old('date')}}" required>
                                             </div>
                                             <label class="col-sm-2 col-form-label">التاريخ</label>
                                         </div>
