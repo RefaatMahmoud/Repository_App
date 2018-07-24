@@ -21,7 +21,8 @@
                                     <div class="counter-block card-body">
                                         <h5>عدد الأصناف</h5>
                                         <h1 class="display-5">
-                                            <i class="fa fa-cubes"></i> 6
+                                            <i class="fa fa-cubes"></i>
+                                            {{count(App\Categories::all())}}
                                         </h1>
                                     </div>
                                 </div>
@@ -31,7 +32,8 @@
                                     <div class="counter-block card-body">
                                         <h5>عدد الفواتير </h5>
                                         <h1 class="display-5">
-                                            <i class="fa fa-credit-card"></i> 6
+                                            <i class="fa fa-credit-card"></i>
+                                            {{count(App\Client::all())}}
                                         </h1>
                                     </div>
                                 </div>
@@ -41,7 +43,8 @@
                                     <div class="counter-block card-body">
                                         <h5>عدد الأدمن</h5>
                                         <h1 class="display-5">
-                                            <i class="fa fa-users"></i> 6
+                                            <i class="fa fa-users"></i>
+                                            {{count(App\User::all())}}
                                         </h1>
                                     </div>
                                 </div>
