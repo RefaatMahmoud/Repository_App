@@ -10,6 +10,5 @@
 <ul>
 <li><h5>Laravel</h5></li>
 <li><h5>Bootstrap v4</h5></li>
-<li><h5>Js DOM</h5></li>
 </ul>
 
